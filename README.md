@@ -8,7 +8,11 @@ Input text and transform its format using various formatters. You can shuffle, r
 ```
 
 # Quick start
-Use `CommandExecutor` created by factory and execute with input format: `<text>/<formatters>/<keys>`
+Come to [discord](https://discord.gg/rbbaKCYt74) and run this command: `/format <text> [formatters] [keys]`
+
+---
+
+Or use `CommandExecutor` created by factory and execute with input format: `<text>/<formatters>/<keys>`
 ```java
 CommandExecutor executor = new NormalCommandExecutorFactory().create();
 System.out.println(executor.execute("abcde/m/2")); // deabc
