@@ -1,5 +1,7 @@
 package io.textformatter.formatter;
 
+import io.textformatter.util.Config;
+
 /**
  * Formatter interface which transform the given text with key.<br>
  * <p>
@@ -8,8 +10,6 @@ package io.textformatter.formatter;
  * @see {@link FilterFormatter}
  */
 public interface TextFormatter {
-    public static final String DELIMITER = ":";
-
     /**
      * Transforms the text with the given key.
      *
@@ -34,7 +34,7 @@ public interface TextFormatter {
      * @return key without head
      */
     default String removeKeyHead(String key) {
-        if (!key.contains(DELIMITER)) {
+        if (!key.contains(Config.KEY_DELIMITER)) {
             return "";
         }
         String keyHead = extractKeyHead(key);
@@ -48,6 +48,6 @@ public interface TextFormatter {
      * @return key head from the key
      */
     default String extractKeyHead(String key) {
-        return key.split(DELIMITER)[0];
+        return key.split(Config.KEY_DELIMITER)[0];
     }
 }
